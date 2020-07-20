@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.albumweb.demo.model.UserDTO;
 
 @Controller
+@RequestMapping("/registration")
 public class RegistrationController {
-    @GetMapping("/registration")
+    @GetMapping
     public String registration(){
         return "registration";
     }
 
-    @PostMapping("/registration")
+    @PostMapping
     public String registration2(@ModelAttribute UserDTO userDTO){
-        //UserDTO userDTO = new UserDTO();
-        //model.addAttribute("user",userDTO);
+        System.out.println(userDTO.getName());
         return "home";
     }
 }
