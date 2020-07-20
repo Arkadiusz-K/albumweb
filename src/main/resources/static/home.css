@@ -1,0 +1,56 @@
+body{
+    background-color: cadetblue;
+}
+
+header{
+    background-color: silver;
+    border: 1px solid #cc6666;
+    height: 60px;
+}
+
+nav
+{
+    background-color: #006666;
+    margin: 0 0 0 0;
+    z-index: 100;
+    border: 1px solid #cc6666;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+nav ul li{
+    margin: 0 10px 0 0;
+    display: inline-block;
+    min-width: 50px;
+}
+
+nav a{
+    display: block;
+    padding: 0 10px 0 0;
+    color: darkred;
+    font-size: 20px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    background-color: #990000;
+}
+
+#sidebar
+{
+    float: left;
+    width: 148px;
+    min-height: 620px;
+    padding: 20px;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 18px;
+    border-right: 2px dotted #666666
+}
