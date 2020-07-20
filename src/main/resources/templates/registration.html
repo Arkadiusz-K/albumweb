@@ -15,10 +15,9 @@
     </ul>
 </nav>
 <h3>Zarejestruj się!</h3>
-    <form th:action="@{/registration}" th:object="${userDTO}" method="post">
+    <form action="#" th:action="@{/registration}" method="post" th:object="${userDTO}">
         <label>
-            <label for="name">Name</label>
-            <input type="text" id="name"/>
+            <input type="text" th:field="*{name}"/>
         </label>
     </form>
 </body>

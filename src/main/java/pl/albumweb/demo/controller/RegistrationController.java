@@ -12,13 +12,16 @@ import pl.albumweb.demo.model.UserDTO;
 @RequestMapping("/registration")
 public class RegistrationController {
     @GetMapping
-    public String registration(){
+    public String registration(Model model){
+        UserDTO userDTO = new UserDTO();
+        model.addAttribute("userDTO",userDTO);
         return "registration";
     }
 
     @PostMapping
-    public String registration2(@ModelAttribute UserDTO userDTO){
+    public String registration2(@ModelAttribute("userDTO") UserDTO userDTO){
         System.out.println(userDTO.getName());
+        System.out.println(userDTO.getId());
         return "home";
     }
 }
