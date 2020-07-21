@@ -12,10 +12,13 @@ public class UserDTO {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     @NotNull
-    private String name;
+    private String login;
+    @NotNull
+    private String password;
     public UserDTO(){};
-    public UserDTO(String name){
-        this.name=name;
+    public UserDTO(String login,String password){
+        this.login=login;
+        this.password=password;
     }
 }
 

@@ -16,7 +16,7 @@ public class UserStart {
     }
     @EventListener(ApplicationReadyEvent.class)
     public void runExample(){
-        UserDTO userDTO = new UserDTO("Arek");
+        UserDTO userDTO = new UserDTO("Arek","ar");
         userDTORepo.save(userDTO);
     }
 }

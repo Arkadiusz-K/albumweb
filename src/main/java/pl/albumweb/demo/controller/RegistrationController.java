@@ -29,9 +29,10 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String registration2(@ModelAttribute("userDTO") UserDTO userDTO){
-        System.out.println(userDTO.getName());
-        System.out.println(userDTO.getId());
+    public String registrationFromForm(@ModelAttribute("userDTO") UserDTO userDTO){
+        System.out.println("login: "+ userDTO.getLogin());
+        System.out.println("id: "+userDTO.getId());
+        System.out.println("pas: "+userDTO.getPassword());
         userDTORepo.save(userDTO);
         return "home";
     }

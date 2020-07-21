@@ -12,12 +12,15 @@
         <li><a href="#">Baza albumów</a></li>
         <li><a href="#">Baza artystów</a></li>
         <li><a href="#">Rankingi</a></li>
+        <li><a href="/registration">Zarejestruj się!</a></li>
     </ul>
 </nav>
 <h3>Zarejestruj się!</h3>
     <form action="#" th:action="@{/registration}" method="post" th:object="${userDTO}">
-        <label>
-            <input type="text" th:field="*{name}"/>
-        </label>
+            <label for="login">Login</label>
+            <input type="text" id="login" th:field="*{login}"/>
+            <label for="password">hasło</label>
+            <input type="text" id="password" th:field="*{password}"/>
+            <input type="submit" value="Potwierdź!">
     </form>
 </body>
