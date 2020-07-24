@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface UserDTORepo extends CrudRepository<UserDTO, Integer> {
-    UserDTO findByLogin(String login);
+    UserDTO findByUsername(String username);
 }
