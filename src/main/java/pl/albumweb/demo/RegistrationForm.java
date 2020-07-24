@@ -1,8 +1,6 @@
 package pl.albumweb.demo;
 
 import lombok.Data;
-import org.springframework.http.converter.json.GsonBuilderUtils;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.albumweb.demo.model.UserDTO;
 

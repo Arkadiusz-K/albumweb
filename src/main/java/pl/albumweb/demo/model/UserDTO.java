@@ -1,22 +1,15 @@
 package pl.albumweb.demo.model;
 
-import com.sun.istack.NotNull;
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
 @Entity
-//@Table(name="users")
 @Data
 public class UserDTO implements UserDetails {
     @Id
@@ -55,6 +48,5 @@ public class UserDTO implements UserDetails {
     public boolean isEnabled() {
         return false;
     }
-
 }
 
