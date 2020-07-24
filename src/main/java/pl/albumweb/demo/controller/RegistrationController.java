@@ -47,6 +47,7 @@ public class RegistrationController{
         System.out.println("id: " + userDTO.getId());
         System.out.println("pas: " + userDTO.getPassword());
         userDTORepo.save(form.toUser(passwordEncoder));
+        //userDTORepo.save(userDTO);
         //return "redirect:/login";
         return "home";
     }

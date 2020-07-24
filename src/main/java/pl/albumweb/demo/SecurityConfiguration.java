@@ -31,8 +31,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/home").permitAll()
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/h2-console/**").permitAll();
-        http.csrf().disable();
-        http.headers().frameOptions().disable();
+        http.headers().frameOptions().disable()
+            .and()
+                .formLogin().loginPage("/login")
+                .loginProcessingUrl("/authenticate")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/home.html", true);
     }
 
     @Override
