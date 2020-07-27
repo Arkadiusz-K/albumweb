@@ -7,16 +7,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
-import pl.albumweb.demo.repository.UserDTORepo;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Bean
     public PasswordEncoder encoder(){
         return new BCryptPasswordEncoder(4);
@@ -37,14 +36,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/authenticate")
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/home.html", true);
+                .defaultSuccessUrl("/home.html", true)
+         .and().csrf().ignoringAntMatchers("/h2-console/**");
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+   // @Override
+    protected void configure(AuthenticationManagerBuilder auth, DataSource dataSource) throws Exception{
         auth
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(new BCryptPasswordEncoder());
+        auth.jdbcAuthentication().dataSource(dataSource);
 
     }
 

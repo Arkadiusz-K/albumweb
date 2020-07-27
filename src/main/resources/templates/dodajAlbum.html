@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>AlbumWeb</title>
+</head>
+<body>
+<h3>Witaj w formularzu dodawania albumu</h3>
+<nav>
+    <ul>
+        <li><a href="#">Baza albumów</a></li>
+        <li><a href="#">Baza artystów</a></li>
+        <li><a href="#">Rankingi</a></li>
+        <li><a href="/registration">Zarejestruj się!</a></li>
+        <li><a href="/login">Zaloguj się</a></li>
+    </ul>
+</nav>
+<h3>Formularz dodawania albumu</h3>
+<form th:action="@{/dodajAlbum}" method="post" id="addAlbumForm">
+    <label for="tytul">Tytuł</label>
+    <input type="text" id="tytul" name="tytul"/><br>
+    <label for="autor">Autor</label>
+    <input type="text" id="autor" name="autor"/><br>
+    <label for="dataPremiery">Data premiery</label>
+    <input type="text" id="dataPremiery" name="dataPremiery"/><br>
+    <label for="playlista">Playlista</label>
+    <input type="text" id="playlista" name="playlista"/><br>
+    <label for="opis">Opis</label>
+    <input type="text" id="opis" name="opis"/><br>
+    <input type="submit" value="Dodaj album"/><br>
+
+</form>
+</body>
+</html>

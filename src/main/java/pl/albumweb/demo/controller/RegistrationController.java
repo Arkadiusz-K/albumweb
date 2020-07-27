@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.albumweb.demo.RegistrationForm;
 import pl.albumweb.demo.model.UserDTO;
-import pl.albumweb.demo.repository.UserDTORepo;
+import pl.albumweb.demo.UserDTORepo;
 
 @Controller
 @RequestMapping("/registration")
@@ -24,7 +24,7 @@ public class RegistrationController{
     @GetMapping
     public String registration(Model model){
         UserDTO userDTO = new UserDTO();
-       model.addAttribute("userDTO",userDTO);
+        model.addAttribute("userDTO",userDTO);
         return "registration";
     }
     /*

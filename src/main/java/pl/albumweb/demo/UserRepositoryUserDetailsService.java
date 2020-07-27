@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pl.albumweb.demo.model.UserDTO;
-import pl.albumweb.demo.repository.UserDTORepo;
 
 @Service
 public class UserRepositoryUserDetailsService implements UserDetailsService {

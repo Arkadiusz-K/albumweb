@@ -54,3 +54,7 @@ nav a:hover
     font-size: 18px;
     border-right: 2px dotted #666666
 }
+
+#stylized input{
+    display:block;
+}

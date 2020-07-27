@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.albumweb.demo.model.UserDTO;
-import pl.albumweb.demo.repository.UserDTORepo;
+import pl.albumweb.demo.UserDTORepo;
 
 @Controller
 @RequestMapping("/login")
@@ -32,6 +32,7 @@ public class LoginController {
         System.out.println("login: " + userDTO.getUsername());
         if (isAuthenticated(userDTO)) {
             System.out.println("POPRAWNIE ZALOGOWANO");
+            return "home";
         }
         return "home";
     }
